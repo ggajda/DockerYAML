@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: (J23456)
+      POSTGRES_DB: postgres
+    volumes:
+      - postgresDB:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: g.gajda1976@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: (J23456)
+    volumes:
+      - pgAdminConfig:/var/lib/pgadmin
+
+    ports:
+      - "5050:80"
+volumes:
+  postgresDB:
+  pgAdminConfig:
+
+
+
