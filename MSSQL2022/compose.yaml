@@ -9,8 +9,8 @@ services:
       MSSQL_SA_PASSWORD: Topcon1932
       # MSSQL_PID: TopconD
     volumes:
-      - mssql2022:/var/opt/mssql
+      - mssqlData:/var/opt/mssql
     ports:
       - "1433:1433"
 volumes:
-  mssql2022:
+  mssqlData:
